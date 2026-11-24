@@ -1,0 +1,196 @@
+/* =================================================================
+   ChatGPT-Inspired Minimalist & Modern Theme for ReshLLM
+   ================================================================= */
+
+/* Base font and smooth rendering */
+html, body, [class*="css"] {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.011em;
+}
+
+/* Hide default Streamlit header bar decoration for a sleek app feel */
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* Main Container spacing */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 5rem !important;
+    max-width: 860px !important;
+}
+
+/* =================================================================
+   Welcome Screen & Suggested Prompts
+   ================================================================= */
+.welcome-container {
+    text-align: center;
+    margin-top: 3.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.welcome-title {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: inherit;
+    letter-spacing: -0.03em;
+}
+
+.welcome-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.prompt-card {
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(128, 128, 128, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prompt-card:hover {
+    border-color: rgba(128, 128, 128, 0.45);
+    background: rgba(128, 128, 128, 0.1);
+    transform: translateY(-2px);
+}
+
+.prompt-card-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prompt-card-desc {
+    font-size: 0.82rem;
+    opacity: 0.75;
+    line-height: 1.35;
+}
+
+/* =================================================================
+   Chat Message Bubbles
+   ================================================================= */
+/* User message container */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) {
+    flex-direction: row-reverse !important;
+    text-align: left;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    max-width: 82% !important;
+}
+
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) > div:nth-child(2) {
+    background-color: rgba(128, 128, 128, 0.12) !important;
+    border-radius: 18px 18px 4px 18px !important;
+    padding: 0.75rem 1.1rem !important;
+    border: 1px solid rgba(128, 128, 128, 0.18) !important;
+}
+
+/* Assistant message container */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) {
+    max-width: 95% !important;
+    margin-right: auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) > div:nth-child(2) {
+    background-color: transparent !important;
+    padding: 0.5rem 0.5rem !important;
+    line-height: 1.65 !important;
+}
+
+/* Code block aesthetic */
+pre {
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
+    border-radius: 10px !important;
+    padding: 0.85rem !important;
+    font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace !important;
+}
+
+code {
+    font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace !important;
+    font-size: 0.9em !important;
+}
+
+/* =================================================================
+   Sidebar Styling
+   ================================================================= */
+section[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(128, 128, 128, 0.15) !important;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.model-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: 12px;
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    margin-bottom: 1rem;
+}
+
+.model-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.session-item:hover {
+    background: rgba(128, 128, 128, 0.12);
+}
+
+.session-item.active {
+    background: rgba(128, 128, 128, 0.18);
+    font-weight: 500;
+}
+
+/* Subtle source expander card */
+.sources-card {
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+    background: rgba(128, 128, 128, 0.04);
+}
+

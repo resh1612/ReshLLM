@@ -1,0 +1,24 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Chat history and user data
+chat_history/
+*.log
+
+# Model files (do not upload large GGUF files)
+*.gguf
+
+# Environment and secrets
+.env
+.env.*
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
