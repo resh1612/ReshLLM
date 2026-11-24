@@ -74,4 +74,9 @@ Inside the Web App sidebar:
   - `Auto-Detect (Smart DDGS)`: Searches only when questions involve recent events, news, or current year.
   - `Always Search Web`: Forces web search on every query.
   - `Offline (Local AI Only)`: Disables internet search entirely.
+ 
+## Preview 
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6b93cd7b-2e09-4cbe-a5d1-d80562ee36a3" />
+
 
